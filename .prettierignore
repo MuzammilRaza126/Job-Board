@@ -1,0 +1,5 @@
+# basically to ignore formatting code in these files and folders
+.yarn
+.next
+dist
+node_modules
