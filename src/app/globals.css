@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.carousel-button {
+  position: absolute;
+  bottom: 20%;
+  display: flex;
+  /* max-width: 130vh; */
+  justify-content: space-between;
+}

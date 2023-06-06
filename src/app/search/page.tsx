@@ -1,9 +1,7 @@
-import Login from '@/components/Authentication/Login'
-
 const page = () => {
   return (
     <div>
-      <Login />
+      <h1>Search</h1>
     </div>
   )
 }
