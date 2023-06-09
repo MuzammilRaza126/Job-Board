@@ -4,9 +4,9 @@ import React from 'react'
 
 const Slider: React.FC = () => {
   return (
-    <div className="p-24">
-      <div className="mx-auto flex h-[560px] w-full items-center justify-center rounded-2xl bg-[#C6DAE5] p-10">
-        <div className="flex h-full max-w-xl flex-col justify-between">
+    <div className="px-16 py-24">
+      <div className="mx-auto flex h-[560px] w-full items-center justify-center rounded-2xl bg-[#C6DAE5] p-6 ">
+        <div className="flex h-full max-w-xl flex-[3] flex-col justify-between">
           <h1 className="text-5xl font-bold leading-snug tracking-wide text-[#004f6d]">
             <span className="text-amber-400">
               The #1 Job Board Platform to find remote jobs!
@@ -23,7 +23,7 @@ const Slider: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="max-w-lg">
+        <div className="w-96 max-w-lg xl:flex-[2]">
           <Image
             alt="Go to Job"
             src="/images/goto-job.png"

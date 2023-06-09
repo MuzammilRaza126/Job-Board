@@ -34,8 +34,8 @@ const TestiminialSlider = () => {
       <div className="w-full px-36">
         <div className="max-h-max p-6">
           <div ref={sliderRef} className="keen-slider">
-            {testimonials.map((review) => (
-              <div className="keen-slider__slide flex h-96 w-80 max-w-xs flex-col justify-between rounded-2xl bg-amber-400 p-5">
+            {testimonials.map((review, id) => (
+              <div key={id} className="keen-slider__slide flex h-96 w-80 max-w-xs flex-col justify-between rounded-2xl bg-amber-400 p-5">
                 <h2 className="text-xl font-semibold">{review.text}</h2>
                 <div className="flex flex-col items-center justify-center space-y-2 ">
                   <Image

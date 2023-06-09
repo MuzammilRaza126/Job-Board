@@ -1,11 +1,11 @@
 'use client'
-
+import { useAuthContext } from '@/contexts/AuthProvider'
 import Image from 'next/image'
 import Link from 'next/link'
-// import { useAuthContext } from './AuthProvider'
 
 const Navbar = () => {
-  //   const { user, authStatus, logout } = useAuthContext()
+  const { user, authStatus, logout } = useAuthContext()
+  
   return (
     <div className="flex h-20 justify-between bg-[#292D51] px-10">
       <div className="flex flex-1 items-center justify-start">
@@ -28,26 +28,25 @@ const Navbar = () => {
       </div>
 
       <div className="flex flex-1 items-center justify-end">
-        {
-          // authStatus === 'authenticated' ? (
+        {authStatus === 'authenticated' ? (
           <>
-            <p className="mr-4 rounded-full p-1 px-1.5 text-xl text-yellow-50 shadow shadow-purple-800 duration-300 ease-in-out hover:cursor-pointer hover:p-2">
-              <Link href={'/pricing'}>EMAIIL</Link>
+            <p className="mr-4 rounded-full p-1 px-3 text-yellow-50 shadow shadow-purple-800 duration-300 ease-in-out hover:cursor-pointer hover:py-2">
+              <Link href={'#'}>{user?.name}</Link>
             </p>
             <button
               className="rounded-full bg-blue-400 px-6 py-2"
-              //   onClick={() => logout()}
+              onClick={() => logout()}
             >
               Logout
             </button>
           </>
-          // ) : authStatus === 'unauthenticated' ? (
-          //   <Link href={'/login'} className="rounded-full bg-blue-400 px-6 py-2">
-          //     Login
-          //   </Link>
-          // ) : (
-          //   <p>Loading ...</p>)
-        }
+        ) : authStatus === 'unauthenticated' ? (
+          <Link href={'/login'} className="rounded-full bg-blue-400 px-6 py-2">
+            Login
+          </Link>
+        ) : (
+          <p>Loading ...</p>
+        )}
       </div>
     </div>
   )

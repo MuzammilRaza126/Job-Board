@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { RegisterIUser, RegisterUser } from "../models/Users";
+import User, { IUser } from "../models/Users";
 // import User, { IUser } from '../models/User';
 
 export const getUsers = async (req: Request, res: Response): Promise<void> => {
   try {
-    const users: RegisterIUser[] = await RegisterUser.find();
+    const users: IUser[] = await User.find();
     res.status(200).json(users);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
@@ -14,7 +14,7 @@ export const getUsers = async (req: Request, res: Response): Promise<void> => {
 export const getUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email } = req.body;
-    const user: RegisterIUser | null = await RegisterUser.findOne({ email });
+    const user: IUser | null = await User.findOne({ email });
     if (!user) {
       res.status(404).json({ message: "User not found" });
       return;
@@ -31,7 +31,7 @@ export const getCurrentUser = async (
 ): Promise<void> => {
   try {
     const { email } = req.body;
-    const user: RegisterIUser | null = await RegisterUser.findOne({ email });
+    const user: IUser | null = await User.findOne({ email });
     if (!user) {
       res.status(404).json({ message: "User not found" });
       return;
@@ -41,6 +41,7 @@ export const getCurrentUser = async (
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
 
 // export const signup = async (req: Request, res: Response) => {
 //   try {

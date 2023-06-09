@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db';
 import authRoutes from './routes/authRoutes';
 import userRoutes from './routes/userRoutes';
+import cors from 'cors';
 
 
 // Load environment variables
@@ -13,6 +14,13 @@ connectDB();
 
 // Create Express app
 const app = express();
+
+//CORS middleware
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+
 
 // Middleware
 app.use(express.json());
