@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <div className="flex h-10 justify-between bg-gray-950 px-10 py-5">
+    <div className="flex h-10 justify-between bg-gray-950 px-10 py-5 bottom-0">
       <div className="flex items-center justify-start space-x-5">
         <button className="rounded-lg bg-[#D9D9D9] px-6 py-1">
           Website’s Logo

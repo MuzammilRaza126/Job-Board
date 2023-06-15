@@ -1,13 +1,18 @@
 export type JobCardProps = {
   job: {
-    id: string
-    title: string
-    company: string
-    location: string
-    description: string
-    requirements: string
-    salary: string
-    createdAt: string
-    updatedAt: string
+    jobId: string;
+    contactName: string;
+    contactEmail: string;
+    contactPhone: string;
+    companyName: string;
+    jobTitle: string;
+    industry: string;
+    location: string;
+    jobDescription: string;
+    employmentType: string;
+    skillsQualifications: string;
+    compensationBenefits: string;
+    applicationProcess: string;
+    applicationDeadline: string;
   }
 }

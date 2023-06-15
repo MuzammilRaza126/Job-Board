@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db';
 import authRoutes from './routes/authRoutes';
 import userRoutes from './routes/userRoutes';
+import jobRoutes from './routes/jobRoutes';
 import cors from 'cors';
 
 
@@ -29,6 +30,8 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+// app.use('/api/jobs', jobRoutes);
+app.use('/jobs', jobRoutes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);

@@ -19,7 +19,7 @@ const Navbar = () => {
         <Link href={'/job-board'} className="">
           Jobs Board
         </Link>
-        <Link href={'/job-board/job-form'} className="">
+        <Link href={'/create-job'} className="">
           Create Job
         </Link>
         <Link href={'/pricing'} className="">

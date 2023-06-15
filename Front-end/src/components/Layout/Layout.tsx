@@ -11,9 +11,9 @@ type LayoutProps = {
 const Layout = ({ children, hideNavbar, hideFooter }: LayoutProps) => {
   return (
     <div className="h-[100vh]">
-      {!hideNavbar && <Navbar />}
+      <div className=''>{!hideNavbar && <Navbar />}</div>
       <div className="">{children}</div>
-      {!hideFooter && <Footer />}
+      <div className=''>{!hideFooter && <Footer />}</div>
     </div>
   )
 }
