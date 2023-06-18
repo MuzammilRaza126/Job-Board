@@ -8,9 +8,11 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Toaster } from 'react-hot-toast'
 import PasswordInput from './PasswordHandler'
+import { useAuthContext } from '@/contexts/AuthProvider'
 
 const Page = () => {
   const router = useRouter()
+  const { setUser } = useAuthContext()
   const [loginForm, setLoginForm] = useState({
     email: '',
     password: '',
@@ -30,9 +32,9 @@ const Page = () => {
           json: loginForm,
         })
         .json()
-
-      const user =
+        const user =
         typeof res.user === 'string' ? res.user : JSON.stringify(res.user)
+        setUser(user)
       localStorage.setItem('user', user)
       router.push('/')
       // Show success message
